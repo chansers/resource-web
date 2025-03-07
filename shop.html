@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+    <link rel="stylesheet" href="css/shopstyle.css">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>build your own toy collection</title>
+    <script src="https://html2canvas.hertzen.com/dist/html2canvas.min.js"></script>
+    <style>
+
+    </style>
+</head>
+
+
+
+
+<body>
+    <div id="container">
+        <div id="cart">
+            <img src="images/shoppingbasket.webp" width="400px">
+            <h1>build your own toy collection!</h1>
+        </div>
+        
+        <img src="images/1ddoll.png" class="product">
+        <img src="images/beanieboo.png" class="product">
+        <img src="images/beyblade.png" class="product">
+        <img src="images/cookingmama.jpg" class="product">
+        <img src="images/calicocritters.png" class="product">
+        <img src="images/disneysquish.PNG" class="product">
+        <img src="images/etch sketch.png" class="product">
+        <img src="https://upload.wikimedia.org/wikipedia/en/1/12/FNAF1logo.jpg" class="product">
+        <img src="images/lalaloopsy.png" class="product">
+        <img src="images/lps.png" class="product">
+        <img src="images/legos.png" class="product">
+        <img src="images/legofriends.png" class="product">
+        <img src="images/minecraftlogo.png" class="product">
+        <img src="images/monsterhigh.png" class="product">
+        <img src="images/omnom.png" class="product">
+        <img src="images/papaspizzeria.jpeg" class="product">
+        <img src="images/plantsvszombies.webp" class="product">
+        <img src="images/pokemon cards.png" class="product">
+        <img src="images/pollypocket.png" class="product">
+        <img src="images/subwaysurfers.png" class="product">
+        <img src="images/rainbowloom.png" class="product">
+        <img src="images/slap bracelets.png" class="product">
+        <img src="images/shopkins.png" class="product">
+        <img src="images/sillybandz.png" class="product">
+        <img src="images/supermariobros.jpg" class="product">
+        <img src="images/tsum.png" class="product">
+        <img src="https://shared.cloudflare.steamstatic.com/store_item_assets/steam/apps/335240/capsule_616x353.jpg?t=1684425951" class="product">
+        <img src="images/wii sports.jpg" class="product">
+        <img src="images/yugioh.png" class="product">
+        <img src="images/zhuzhupets.png" class="product">
+        <img src="images/zoobles.png" class="product">
+
+
+    </div>
+    
+    <div id="buttons">
+        <button><a href="index.html">home</a></button>
+        <button id="reset-btn">reset</button>
+    </div>
+
+
+</body>
+
+
+<script>
+    const cart = document.getElementById('cart');
+    const products = document.querySelectorAll('.product');
+    const resetBtn = document.getElementById('reset-btn');
+
+    function randomPosition(element) {
+        const maxX = container.clientWidth - element.clientWidth;
+        const maxY = container.clientHeight - element.clientHeight;
+        const cartRect = cart.getBoundingClientRect();
+        let x, y;
+        
+        do {
+            x = Math.random() * maxX;
+            y = Math.random() * maxY;
+        } while (
+            x > cartRect.left - element.clientWidth && x < cartRect.right &&
+            y > cartRect.top - element.clientHeight && y < cartRect.bottom
+        );
+
+        return { x, y };
+    }
+
+    function positionProducts() {
+        products.forEach(product => {
+            const pos = randomPosition(product);
+            product.style.left = `${pos.x}px`;
+            product.style.top = `${pos.y}px`;
+        });
+    }
+
+    function startDragging(e) {
+        isDragging = true;
+        currentProduct = e.target;
+        offsetX = e.clientX - currentProduct.getBoundingClientRect().left;
+        offsetY = e.clientY - currentProduct.getBoundingClientRect().top;
+    }
+
+    function drag(e) {
+        if (!isDragging) return;
+        e.preventDefault();
+        
+        let x = e.clientX - offsetX;
+        let y = e.clientY - offsetY;
+        
+        currentProduct.style.left = `${x}px`;
+        currentProduct.style.top = `${y}px`;
+    }
+
+    function stopDragging() {
+        if (!isDragging) return;
+        isDragging = false;
+        currentProduct = null;
+    }
+
+    products.forEach(product => {
+        product.addEventListener('mousedown', startDragging);
+    });
+
+    document.addEventListener('mousemove', drag);
+    document.addEventListener('mouseup', stopDragging);
+    resetBtn.addEventListener('click', positionProducts);
+    positionProducts();
+
+</script>
+
+
+</html>

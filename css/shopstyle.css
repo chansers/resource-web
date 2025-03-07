@@ -1,0 +1,67 @@
+body, html {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    background: #000000 url('https://www.shutterstock.com/shutterstock/videos/3569597657/thumb/1.jpg?ip=x480') repeat;
+    color: #00f7ff;
+    font-family: "Comic Sans MS", sans-serif;
+}
+
+#container {
+    position: relative;
+    width: 100%;
+    height: 100%;
+}
+
+#cart {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 500px;
+    height: 500px;
+    padding: 10px;
+    text-align: center;
+}
+
+.product {
+    position: absolute;
+    width: 100px;
+    height: auto;
+    cursor: grab;
+}
+
+#buttons {
+    position: fixed;
+    bottom: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+button {
+    padding: 10px 20px;
+    margin: 0 10px;
+    background-color: #f330bf;
+    color: white;
+    text-decoration-line: underline;
+    border: none;
+    cursor: pointer;
+    border-radius: 2cap;
+}
+
+
+h1 {
+    text-align: center;
+    font-size: 36px;
+    color: magenta;
+    text-shadow: 2px 2px #00f2ff;
+}
+
+.content {
+    padding: 20px;
+}
+
+a {
+    color: white;
+}
