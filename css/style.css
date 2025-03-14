@@ -142,9 +142,9 @@ ul{
 /*scroll animation*/
 
 .scroll-watcher {
-  height: 3px;
+  height: 5px;
   position: fixed;
-  top: 20;
+  top: 48px;
   z-index: 1000;
   background-color:#ff48b0;
   width: 100%;
@@ -300,6 +300,36 @@ gallery-item:hover .info {
   src: url('../fonts/harpagantest-regular.otf');
   src: url('../fonts/harpagantest-regular.otf') format('embedded-opentype');
 }
+
+
+
+/*about page*/
+.scroll-container {
+  overflow: auto;
+  white-space: nowrap;
+  padding: 10px;
+  position: relative;
+  top: 30px;
+  animation: bg-shift linear;
+  animation-timeline: scroll();
+}
+
+.scroll-container img {
+  padding: 10px;
+  height: 100px;
+  scrollbar-color: #3255a4;
+}
+
+@keyframes horizontal-scroll{
+ to {
+  transform: translate(calc(-50% - 0.5rem));
+ }
+}
+
+@keyframes bg-shift{
+  from { background-color: #ff48b0;}
+  to { background-color: #3255a4;}
+ }
 
 
 
