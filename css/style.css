@@ -6,16 +6,48 @@ header {
 
 body {
   background: #000000 url('https://www.shutterstock.com/shutterstock/videos/3569597657/thumb/1.jpg?ip=x480') repeat;
-  color: #00fbff;
+  color: #00f2ff;
   font-family: "Comic Sans MS", sans-serif;
 }
 
 h1 {
   text-align: center;
-  font-size: 36px;
-  color: magenta;
-  text-shadow: 2px 2px #00f2ff;
+  font-size: 70px;
+  font-family: "Harpagan Regular";
+  color: #ff48b0;
+  text-shadow: 2px 3px #3255a4;
   padding-top: 50px;
+
+}
+
+    #head1{
+      font-size: 70px;
+    }
+
+
+h2 {
+  text-align: center;
+  font-size: 45px;
+  font-family: "Harpagan Regular";
+  color: #ff48b0;
+  text-shadow: 2px 2px #3255a4;
+  padding-top: 50px;
+}
+
+h3 {
+  font-size: 16px;
+  font-family: "Comic Sans MS", sans-serif;
+  color: #3255a4;
+  line-height: 19px;
+}
+
+h4 {
+  font-size: 24px;
+  color: #ff48b0;
+  text-shadow: 1px 2px #3255a4;
+  padding-left: 15%;
+  padding-right: 15%;
+  text-align: center;
 }
 
 
@@ -24,17 +56,43 @@ p {
   padding-right: 30px;
   padding-top: 10px;
   font-size: 18px;
+  color: #ff48b0;
 }
 
-#footer {
-  text-align: center;
-  font-size: 14px;
-  color: #ff00f7;
-  padding: 10px;
+.p-about {
+  text-shadow: 2px 2px #000000;
+  font-size: 20px;
+  line-height: 30px;
+  padding-left: 50px;
+  padding-right: 50px;
 }
 
 
 
+a {
+  text-decoration: none;
+  color: #ff48b0;
+}
+
+a:hover {
+  text-decoration: underline;
+  color: white;
+}
+
+
+#spacer {
+  height: 200px;
+  width: auto;
+}
+#spacer-sm {
+  height: 50px;
+  width: auto;
+}
+
+
+
+
+/*menu bar*/
 
 
 ul{
@@ -49,7 +107,9 @@ ul{
 
 .nav {
   display: flex;
-  justify-content: center;
+  width: auto;
+  top: 0;
+  left: 0;
 }
   
   .nav-menu {
@@ -65,41 +125,49 @@ ul{
   
   .nav-menu a {
     display: block;
-    color: white;
+    color: #ff48b0;
     text-decoration: none;
     padding: 15px 20px;
+    align-content: center;
   }
   
   .nav-menu a:hover {
-    background-color: #ff00f7;
-    border-radius: 2cap;
-  }
+    background-color: #ff48b0;
+    color: #3255a4;
+    transition: 0.5s;
+}
   
 
-.nav {
-    padding: 10px;
-    width: auto;
-    top: 0;
-    left: 0;
+
+/*scroll animation*/
+
+.scroll-watcher {
+  height: 3px;
+  position: fixed;
+  top: 20;
+  z-index: 1000;
+  background-color:#ff48b0;
+  width: 100%;
+  scale: 0 1;
+  transform-origin: left;
+  animation: scroll-watcher linear;
+  animation-timeline: scroll();
 }
 
-.nav a {
-    color: #00FFFF;
-    text-decoration: none;
-    font-weight: bold;
-    margin-right: 15px;
+@keyframes scroll-watcher {
+  to {scale: 1 1;}
 }
 
 
 
-
+/*gallery*/
 
 
 .gallery {
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
     gap: 16px;
-    padding: 20px;
+    padding: 15px;
     align-items: center;
 }
 
@@ -107,6 +175,7 @@ ul{
       position: relative;
       overflow: hidden;
       cursor: pointer;
+      padding: 25px;
   }
 
   .gallery-item img {
@@ -122,13 +191,60 @@ ul{
 }
 
 
+/*duotone*/
+:root {
+  --base: #ff48ad;
+  --bg-blend: hard-light;
+  --blur: 0px;
+  --fg-blend: lighten;
+  --foreground: #3250a4;
+  --opacity: 1;
+  --spacing: 1%;
+}
+.img-wrapper {
+  background-color: var(--base);
+  display: flex;
+  flex: 1 1 100%;
+  height: 100%;
+  overflow: hidden;
+  padding: var(--spacing);
+  position: relative;
+}
+
+.img-wrapper img {
+  filter: grayscale(100%) contrast(1) blur(var(--blur));
+  flex: 1 0 100%;
+  height: 100%;
+  max-width: 100%;
+  mix-blend-mode: var(--bg-blend);
+  object-fit: contain;
+  opacity: var(--opacity);
+  position: relative;
+  width: 100%;
+}
+
+.img-wrapper::before {
+  background-color: var(--foreground);
+  bottom: 0;
+  content: '';
+  mix-blend-mode: var(--fg-blend);
+  position: absolute;
+  right: 0;
+  top: 0;
+  width: 100%;
+  z-index: 1;
+}
+
+
+
+/*picture gallery information boxes
 .info {
     position: absolute;
     bottom: 0;
     left: 0;
-    background-color: magenta;
+    background-color: #ff48b0;
     border-radius: 2cap;
-    color: rgb(30, 255, 255);
+    color: #00f2ff;
     padding-left: 10px;
     padding-right: 10px;
     font-size: small;
@@ -136,33 +252,94 @@ ul{
     transition: transform 0.2s ease;
 }
 
-.gallery-item:hover .info {
+gallery-item:hover .info {
     transform: translateY(0);
+}*/
+
+
+
+
+.rainbow{
+  width: device-width;
+  height:2px;
+  background: linear-gradient(to right,  magenta,orange,yellow,green, #00f2ff,#3255a4,violet,magenta);
+  background-repeat:repeat-x;
+  animation: rainbow 8s linear infinite;
 }
 
-.container {
-    width: 800px;
-    margin: 0 auto;
-    background: linear-gradient(to bottom, #000066, #660066);
-    box-shadow: 0 0 10px #00FFFF;
-    border: 2px solid magenta;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
-
-.content {
-    padding: 20px;
+@keyframes rainbow {
+  0%{background-position:0;}
+  100%{background-position:12000px 0;}
 }
 
 
-div.scroll-container {
-  background-color: #333;
-  overflow: auto;
-  white-space: nowrap;
-  padding: 10px;
+
+
+/*footer*/
+
+#footer {
+  text-align: center;
+  font-size: 14px;
+  color: #ff48b0;
+  padding: 20px 10px;
+  background-color: #3255a4;
+  animation: fade-in linear;
+  animation-timeline: view();
+  animation-range-end: 50px;
 }
 
-div.scroll-container img {
-  padding: 10px;
+
+@font-face {
+  font-family: "Harpagan";
+  src: url('../fonts/harpagantest-light.otf');
+  src: url('../fonts/harpagantest-light.otf') format('embedded-opentype');
+}
+
+@font-face {
+  font-family: "Harpagan Regular";
+  src: url('../fonts/harpagantest-regular.otf');
+  src: url('../fonts/harpagantest-regular.otf') format('embedded-opentype');
+}
+
+
+
+/*testimonies page*/
+.quote{
+  background-color: #3255a4;
+  position: static;
+  margin: auto;
+  width: 80%;
+  padding: 30px;
+  border-radius: 5cap;
+  left: 0;
+  top: 50px;
+  content: "";
+  clear: both;
+  display: table;
+  border: 20px black solid;
+  animation: fade-in linear;
+  animation-timeline: view();
+  animation-range-end: 500px;
+}
+
+#quote-img{
+  height: 220px;
+  float: left;
+  padding-right: 30px;
+}
+
+#quote-img:hover{
+  scale: 0.9;
+  transition: 1s;
+}
+
+#quote-p{
+  font-size: 18px;
+  color: rgb(255, 231, 253);
+  text-shadow: 1px 1px #ff48b0;
+}
+
+@keyframes fade-in {
+  from {scale: .8; opacity: 0;}
+  to {scale: 1; opacity: 1;}
 }

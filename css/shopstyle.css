@@ -42,7 +42,7 @@ body, html {
 button {
     padding: 10px 20px;
     margin: 0 10px;
-    background-color: #f330bf;
+    background-color: #ff48b0;
     color: white;
     text-decoration-line: underline;
     border: none;
@@ -54,8 +54,8 @@ button {
 h1 {
     text-align: center;
     font-size: 36px;
-    color: magenta;
-    text-shadow: 2px 2px #00f2ff;
+    color: #ff48b0;
+    text-shadow: 2px 3px #3255a4;
 }
 
 .content {
