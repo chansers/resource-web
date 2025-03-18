@@ -6,6 +6,7 @@ body, html {
     background: #000000 url('https://www.shutterstock.com/shutterstock/videos/3569597657/thumb/1.jpg?ip=x480') repeat;
     color: #00f7ff;
     font-family: "Comic Sans MS", sans-serif;
+    cursor:url(../images/lpscursorbw.png), auto;
 }
 
 #container {
@@ -30,6 +31,10 @@ body, html {
     width: 100px;
     height: auto;
     cursor: grab;
+}
+
+.product:hover{
+    cursor:url(../images/lpscursor.png), auto;
 }
 
 #buttons {
@@ -57,6 +62,7 @@ button:hover {
     transition: 0.3s;
     color: #3255a4;
     text-decoration: underline;
+    cursor:url(../images/lpscursor.png), auto;
 }
 
 
