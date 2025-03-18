@@ -330,12 +330,6 @@ gallery-item:hover .info {
  }
 }
 
-@keyframes bg-shift{
-  from { background-color: #ff48b0;}
-  to { background-color: #3255a4;}
-}
-
-
 /*about page*/
 
 #imagescroll html body {
