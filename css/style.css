@@ -306,6 +306,9 @@ gallery-item:hover .info {
 }
 
 
+
+/*about page*/
+
 #imagescroll body {
   display: flex;
   flex-direction: column;
