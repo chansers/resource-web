@@ -332,7 +332,7 @@ gallery-item:hover .info {
 
 /*about page*/
 
-#imagescroll html body {
+#imagescroll body {
   display: flex;
   flex-direction: column;
   width: 100%;
