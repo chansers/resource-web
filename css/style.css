@@ -82,6 +82,7 @@ a {
 a:hover {
   text-decoration: underline;
   color: white;
+  cursor:url(../images/lpscursor.png), auto;
 }
 
 
