@@ -306,33 +306,7 @@ gallery-item:hover .info {
 }
 
 
-
-/*about page*/
-.scroll-container {
-  overflow: auto;
-  white-space: nowrap;
-  padding: 10px;
-  position: relative;
-  top: 30px;
-  animation: bg-shift linear;
-  animation-timeline: scroll();
-}
-
-.scroll-container img {
-  padding: 10px;
-  height: 100px;
-  scrollbar-color: #3255a4;
-}
-
-@keyframes horizontal-scroll{
- to {
-  transform: translate(calc(-50% - 0.5rem));
- }
-}
-
-/*about page*/
-
-.scroller {
+#imagescroll body {
   display: flex;
   flex-direction: column;
   width: 100%;
@@ -373,7 +347,6 @@ gallery-item:hover .info {
     transform: translateX(-50%);
   }
 }
-
 
 
 
