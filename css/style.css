@@ -307,16 +307,13 @@ gallery-item:hover .info {
 
 
 
-/*about page*/
 
-#imagescroll body {
+/*about page*/
+body {
   display: flex;
   flex-direction: column;
   width: 100%;
   height: 100%;
-  margin: 0px;
-  padding: 0px;
-  overflow: hidden;
   overflow: scroll;
 }
 
@@ -324,19 +321,16 @@ gallery-item:hover .info {
   box-sizing: border-box;
 }
 
+
 #imagescroll {
   height: 100px;
   top: 50px;
   background: #3255a4;
   position: fixed;
   overflow: hidden;
-  overflow-y: hidden;
   white-space: nowrap;
   left: 0;
-  animation-name: scroll;
-  animation-duration: 30s;
-  animation-iteration-count: infinite;
-  animation-timing-function: linear;
+  animation: scroll 30s linear infinite;
   z-index: 100;
 }
 
@@ -350,9 +344,6 @@ gallery-item:hover .info {
     transform: translateX(-50%);
   }
 }
-
-
-
 
 
 
